@@ -8,7 +8,8 @@ html, body {
 }
 
 body {
-    background-color: #91377E;
+    background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1) ),url('../resources/img/background.jpg')no-repeat;
+    background-size: cover;
 }
 
 nav {
@@ -38,7 +39,14 @@ nav {
 
 .we-have-plan-div {
     color: #FBFAFB;
-    height: 100px;
+    height: 140px;
+}
+.padding-0{
+    margin-top: 0px;
+}
+
+.padding-20{
+    margin-top: 20px;
 }
 
 .we-have-plan-div .text1 {
@@ -66,6 +74,17 @@ nav {
     overflow: hidden;
 }
 
+.container-table {
+    margin-top: 20px;
+    margin-right: auto;
+    margin-bottom: 0px;
+    margin-left: auto;
+    width: 55%;
+    background-color: #ffffff;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
 .yellow {
     color: #FCEA00;
 }
@@ -73,9 +92,12 @@ nav {
     width: 47px;
     margin-left: -28px;
 } 
-.img-4g{
-     height: 45px;
-}
+    .img-4g{
+         height: 50px;
+         position: relative;
+         top: 21px;
+         padding-left: 3px;
+    }
 
 .sliders-div {
     float: left;
@@ -141,7 +163,18 @@ nav {
 }
 
 .sliders-div .slider{
-    width: 70%;
+    width: 68%;
+}   
+
+.title-convenciones {
+    border-radius: 5px;
+    color: #875b82;
+    height: 65px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    font-size: 125%;
+    background-color: #f2f2f2;
 }
 
 .sl-quantity {
@@ -232,6 +265,22 @@ nav {
 
 .movil-exito-logo {
     margin-top: 35px;
+}
+
+.table-convert {
+    display: inline-block;
+    padding: 20px;
+    height: 60px;
+    vertical-align: middle;
+    color: #666;
+}
+
+.align-left {
+    text-align: left;
+}
+
+.align-right {
+    text-align: right;
 }
      
 

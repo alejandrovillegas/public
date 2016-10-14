@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <title>Móvil exito</title>
-
+        <link rel="stylesheet" href="style/normalize.css">
         <link rel="stylesheet" href="style/index.css">
         <link rel="stylesheet" href="style/jquery-ui.min.css">
         
@@ -24,7 +24,7 @@
         </nav>
         <div class="we-have-plan-div">
             <div class="text1">
-                <p>Tenemos un <span class="yellow">plan</span><img class="img-4g" src="resources/img/elementos-02.svg"></img> que te alcanza</p>
+                <p class="padding-0">Tenemos un <span class="yellow">plan</span><img class="img-4g" src="resources/img/elementos-02.svg"></img> que te alcanza</p>
             </div>
             <div class="text2">
                 <p>para todos <span class="yellow"> tus planes</span><p>
@@ -111,19 +111,33 @@
             </div>
         </div>
 
+        <div class="container-table">
+            <p class="title-convenciones">CONVENCIONES</p>
+            <div class="table-convert align-left">
+                <div>10 canciones = 40 MB</div>
+                <div>1 hora de navegaci&oacute;n (30 p&aacute;ginas) = 5 MB</div>
+                <div>100 Facebook posts (s&oacute;lo texto) = 10 MB</div>
+            </div>
+        <div class="table-convert align-right">
+                    <div>100 correos (s&oacute;lo texto) = 2 MB</div>
+                    <div>100 Whatsapp chats (s&oacute;lo texto) = 3 MB</div>
+                    <div>10 aplicaciones descargadas = 40 MB</div>
+                </div>
+        </div>
+
         <script>
             var maxValues = {
                 socialNetworks : 100,
                 whatsappOther  : 800,
-                streamingMusic : 50,
-                streamingVideo : 30,
+                streamingMusic : 100,
+                streamingVideo : 100,
                 email          : 1000,
-                navigation     : 540,
+                navigation     : 300,
                 appDownloads   : 30
             };
 
             var conventions = {
-                socialNetworks : 0.03,
+                socialNetworks : 0.3,
                 whatsappOther  : 2,
                 streamingMusic : 4,
                 streamingVideo : 30,

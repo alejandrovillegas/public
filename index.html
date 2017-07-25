@@ -2,28 +2,22 @@
 
     <head>
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Móvil exito</title>
         <link rel="stylesheet" href="style/normalize.css">
         <link rel="stylesheet" href="style/index.css">
         <link rel="stylesheet" href="style/jquery-ui.min.css">
-        
+        <link rel="stylesheet" href="style/animate.min.css">
+
     </head>
 
     <body>
-        <nav>
-            <div class="logo-exito">
-                <img></img>
-            </div>
-            <ul class="nav-menu">
-                <li><img src="resources/img/elementos-01.svg" class= "nav-img" alt="Datometro"/></li>
-                <li><a href="#!">¿Como funciona?</a></li>
-                <li><a href="#!">Planes</a></li>
-                <li><a href="#!">¡Actívate ya!</a></li>
-                <li><a href="#!">Contáctenos</a></li>
-            </ul>
-        </nav>
+        <div id="div-dialog-price">
+            <div><img id="img-price"></div>
+        </div>
         <div class="we-have-plan-div">
             <div class="text1">
+                <img src="resources/img/elementos-01.svg" class= "nav-img" alt="Datometro"/>
                 <p class="padding-0">Tenemos un <span class="yellow">plan</span><img class="img-4g" src="resources/img/elementos-02.svg"></img> que te alcanza</p>
             </div>
             <div class="text2">
@@ -38,7 +32,7 @@
                         <div>
                             <div class="sl-description"><p class="w-75">Horas en redes sociales</p></div>
                             <div class="img-slider"><img src="resources/img/elementos-04.svg" alt="imagen SVG"/></div>
-                            <div id="sl-social-networks"" class="slider"></div>
+                            <div id="sl-social-networks" class="slider"></div>
                             <span id="total-social-networks" class="sl-quantity">0</span>
                         </div>
                     </li>
@@ -94,55 +88,58 @@
             </div>
             <div class="calculator-div">
                 <div class="calculator-block">
-                    <div class="consum-monthly">Tu consumo mensual:</div>
+                    <div class="consum-monthly">Tu consumo mensual aproximado:</div>
                 </div>
                 <div class="calculator-block">
                     <div class="quantity-gigas"><span id="total-gigas">0.00</span> <span class="unit-storage">GB</span></div>
                 </div>
                 <div class="calculator-block">
-                    <div class="activate-now"><strong>¡Actívate ya!</strong></div>
+                    <a class="activate-now" href="http://www.movilexito.com/index.php/productos/paquetes" target="_blank"><strong>¡Actívate ya!</strong></a>
                 </div>
                 <div class="calculator-block">
                     <div class="ours-plan"><span>con nuestros planes de datos que <strong>te alcanzan para todo</strong></span></div>
                 </div>
                 <div class="calculator-block">
-                    <div class="movil-exito-logo"><img src="resources/img/movil-exito-logo.png" /></div>
+                    <div class="movil-exito-logo"><img class="img-logo" src="resources/img/movil-exito-logo.svg" /></div>
                 </div>
             </div>
         </div>
 
-        <div class="container-table">
-            <p class="title-convenciones">CONVENCIONES</p>
-            <div class="table-convert align-left">
-                <div>10 canciones = 40 MB</div>
-                <div>1 hora de navegaci&oacute;n (30 p&aacute;ginas) = 5 MB</div>
-                <div>100 Facebook posts (s&oacute;lo texto) = 10 MB</div>
-            </div>
-        <div class="table-convert align-right">
-                    <div>100 correos (s&oacute;lo texto) = 2 MB</div>
-                    <div>100 Whatsapp chats (s&oacute;lo texto) = 3 MB</div>
-                    <div>10 aplicaciones descargadas = 40 MB</div>
+        <div class="div-info">
+
+            <div class="container-table">
+                <p class="title-convenciones">CONVENCIONES</p>
+                <div class="table-convert align-left">
+                    <div>10 canciones = 40 MB</div>
+                    <div>1 hora de navegaci&oacute;n (30 p&aacute;ginas) = 5 MB</div>
+                    <div>100 Facebook posts (s&oacute;lo texto) = 10 MB</div>
                 </div>
+            <div class="table-convert align-right">
+                        <div>100 correos (s&oacute;lo texto) = 2 MB</div>
+                        <div>100 Whatsapp chats (s&oacute;lo texto) = 3 MB</div>
+                        <div>10 aplicaciones descargadas = 40 MB</div>
+                    </div>
+            </div>
         </div>
 
         <script>
             var maxValues = {
-                socialNetworks : 100,
-                whatsappOther  : 800,
-                streamingMusic : 100,
-                streamingVideo : 100,
+                socialNetworks : 24,
+                whatsappOther  : 24,
+                streamingMusic : 24,
+                streamingVideo : 24,
                 email          : 1000,
-                navigation     : 300,
+                navigation     : 24,
                 appDownloads   : 30
             };
 
             var conventions = {
-                socialNetworks : 0.3,
-                whatsappOther  : 2,
-                streamingMusic : 4,
-                streamingVideo : 30,
+                socialNetworks : 9,
+                whatsappOther  : 60,
+                streamingMusic : 120,
+                streamingVideo : 900,
                 email          : 0.02,
-                navigation     : 5,
+                navigation     : 150,
                 appDownloads   : 4
             }
         </script>

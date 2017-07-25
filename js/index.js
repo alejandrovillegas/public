@@ -1,4 +1,13 @@
 (function(){
+    $.fn.extend({
+        animateCss: function (animationName) {
+            var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+            this.addClass('animated ' + animationName).one(animationEnd, function() {
+                $(this).removeClass('animated ' + animationName);
+            });
+        }
+    });
+
     var Utils = {
         calculateAndSetTotal : function() {
             /* Estos totales son en MB */
@@ -9,16 +18,16 @@
             var totalEmails = App.$slEmails.slider("value") * conventions.email;
             var totalNavigation = App.$slNavigation.slider("value") * conventions.navigation;
             var totalAppDownloads = App.$slAppDownloads.slider("value") * conventions.appDownloads;
-        
-            var totalMB = totalSocialNetworks + totalWhatsAppOther + totalStreamingMusic + totalStreamingVideo + totalEmails + totalNavigation + totalAppDownloads; 
+
+            var totalMB = totalSocialNetworks + totalWhatsAppOther + totalStreamingMusic + totalStreamingVideo + totalEmails + totalNavigation + totalAppDownloads;
             var totalGB = totalMB / 1024;
 
             /* Se deja el numero con solo dos decimas y rendoneadas */
             totalGB = parseFloat(Math.round(totalGB * 100) / 100).toFixed(2);
-            
+
             App.$totalGigas.html(totalGB);
 
-            
+
         }
     }
 
@@ -26,8 +35,11 @@
         init : function() {
             this.cacheElements();
             this.bindEvents();
+            this.instanceDialogPrice();
         },
         cacheElements : function() {
+            this.$dialogPrice = $("#div-dialog-price");
+            this.$imgPrice = $("#img-price");
             this.$slSocialNetworks = $("#sl-social-networks");
             this.$slWhatsappOthers = $("#sl-whatsapp-others");
             this.$slStreamingMusic = $("#sl-streaming-music");
@@ -43,10 +55,16 @@
             this.$totalEmails = $("#total-emails");
             this.$totalNavigation = $("#total-navigation");
             this.$totalAppDownloads = $("#total-app-downloads");
-            
+
             this.$totalGigas = $("#total-gigas");
+
+            this.$activateNow = $(".activate-now");
+            this.$oursPlan = $(".ours-plan");
         },
         bindEvents : function() {
+            this.$activateNow.mouseover(function() {
+                App.$oursPlan.animateCss('pulse');
+            })
             this.$slSocialNetworks.slider({
                 range: "min",
                 max: maxValues.socialNetworks,
@@ -66,6 +84,7 @@
                 change: Utils.calculateAndSetTotal
             });
             this.$slStreamingMusic.slider({
+                value: 1,
                 range: "min",
                 max: maxValues.streamingMusic,
                 animate: true,
@@ -74,6 +93,7 @@
                 },
                 change: Utils.calculateAndSetTotal
             });
+
             this.$slStreamingVideo.slider({
                 range: "min",
                 max: maxValues.streamingVideo,
@@ -84,6 +104,7 @@
                 change: Utils.calculateAndSetTotal
             });
             this.$slEmails.slider({
+                min: 1,
                 range: "min",
                 max: maxValues.email,
                 animate: true,
@@ -109,6 +130,16 @@
                     App.$totalAppDownloads.html(ui.value);
                 },
                 change: Utils.calculateAndSetTotal
+            });
+        },
+        instanceDialogPrice: function() {
+            this.$dialogPrice.dialog({
+                modal: true,
+                show: { effect: "blind", duration: 800 },
+                title: "¡Actívate ya!",
+                resizable: false,
+                autoOpen: false,
+                width: 620
             });
         }
     };
